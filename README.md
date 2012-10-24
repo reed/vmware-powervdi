@@ -31,56 +31,56 @@ Run `Get-Help <command-name> -full` to get more detailed documentation.
 ### Action Commands
 ***
 
-#### Add-Entitlement
+##### Add-Entitlement
 
-#### Connect-VDI
+##### Connect-VDI
 
-#### Disconnect-VDI
+##### Disconnect-VDI
 
-#### Export-Pools
+##### Export-Pools
 
-#### Import-Pools
+##### Import-Pools
 
-#### New-PoolFromCopy
+##### New-PoolFromCopy
 
-#### Remove-Entitlement
+##### Remove-Entitlement
 
-#### Send-ConsoleSessionRefresh
+##### Send-ConsoleSessionRefresh
 
-#### Send-PoolRecompose
+##### Send-PoolRecompose
 
-#### Send-PoolRefresh
+##### Send-PoolRefresh
 
-#### Set-PoolSnapshot
+##### Set-PoolSnapshot
 
 
 ### Helpers
 ***
 
-#### Confirm-Entitlement
+##### Confirm-Entitlement
 
-#### Confirm-PoolSnapshotOutdated
+##### Confirm-PoolSnapshotOutdated
 
-#### Confirm-ReplicaProvisioned
+##### Confirm-ReplicaProvisioned
 
-#### Confirm-SnapshotExists
+##### Confirm-SnapshotExists
 
-#### Confirm-SnapshotPathExists
+##### Confirm-SnapshotPathExists
 
-#### Confirm-VDIConnected
+##### Confirm-VDIConnected
 
-#### Get-LatestSnapshot
+##### Get-LatestSnapshot
 
-#### Get-OutdatedVMs
+##### Get-OutdatedVMs
 
-#### Get-PoolMaster
+##### Get-PoolMaster
 
-#### Get-PoolSnapshot
+##### Get-PoolSnapshot
 
-#### Get-PoolsWithOutdatedSnapshots
+##### Get-PoolsWithOutdatedSnapshots
 
-#### Show-Pools
+##### Show-Pools
 
-#### Show-PoolsWithOutdatedSnapshots
+##### Show-PoolsWithOutdatedSnapshots
 
-#### Show-VDICommands
+##### Show-VDICommands
