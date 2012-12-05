@@ -1,5 +1,5 @@
-MU Division of IT VDI PowerShell Module
-=======================================
+VMware PowerVDI PowerShell Module
+=================================
 
 Written by Nick Reed (reednj@missouri.edu)
 
@@ -241,6 +241,72 @@ Given a user or group name and a pool ID, returns true or false depending on if 
 ```powershell
 PS> Confirm-Entitlement -user 'johnsmith' -pool 'Pool1'
 True
+```
+
+
+Datastores
+----------
+
+#### Show-PoolDatastores
+
+> `[-pool | -pool_id] <object>`
+
+Displays the datastores configured for the specified pool.
+
+```powershell
+PS> Show-PoolDatastores Pool1
+
+Name             Types        Overcommit     Path
+----             -----        ----------     ----
+DStore-1         {OS, data}   Aggressive     /path/to/DStore-1
+DStore-2         {OS, data}   Aggressive     /path/to/DStore-2
+DStore-Replica   {replica}    Conservative   /path/to/DStore-Replica
+```
+
+#### Add-PoolDatastore
+
+> `[-datastore] <string>`
+> `[[-pools | -pool | -pool_id | -to] <object>]`
+> `[[-usage] <string>]`
+> `[[-overcommit] <string>]`
+
+Adds a datastore to the configuration of the specified desktop pools, or on all pools if none are specified.
+
+Only use the name of the datastore.  The full path will be assumed to match the other datastores configured for the pool. 
+
+The `usage` parameter defines how the datastore is to be used.  It can either be `OS,data` (as a string) or `replica`.  Defaults to `OS,data`.
+
+The `overcommit` parameter defines the storage strategy.  It can be either `None`, `Conservative`, `Moderate`, or `Aggressive`.  Defaults to `None`.
+
+```powershell
+PS> Add-PoolDatastore DStore-3 -to Pool1 -overcommit Aggressive
+
+   Pool1
+   -----
+   [Conservative,replica]      DStore-Replica
+   [Aggressive,OS,data]        DStore-1
+   [Aggressive,OS,data]        DStore-2
+  +[Aggressive,OS,data]       +DStore-3: Success
+```
+
+#### Remove-PoolDatastore
+
+> `[-datastore] <string>`
+> `[[-pools | -pool | -pool_id | -from] <object>]`
+
+Removes a datastore from the configuration of the specified desktop pools, or on all pools if none are specified.  Specify the datastore by name, without the path.
+
+You will be prevented from performing a removal that will result in the pool having no datastores configured.  
+
+```powershell
+PS> Remove-PoolDatastore DStore-3 -from Pool1
+
+   Pool1
+   -----
+   [Conservative,replica]      DStore-Replica
+   [Aggressive,OS,data]        DStore-1
+   [Aggressive,OS,data]        DStore-2
+  -[Aggressive,OS,data]       -DStore-3: Success
 ```
 
 

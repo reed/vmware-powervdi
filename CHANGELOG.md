@@ -1,3 +1,8 @@
+### 1.2.0 (5 December 2012)
+  - Added `Show-PoolDatastores`
+  - Added `Add-PoolDatastore`
+  - Added `Remove-PoolDatastore`
+
 ### 1.1.0 (1 November 2012)
   - Added `defaultbroker` setting
   - Added `domaincontrollerpath` setting
