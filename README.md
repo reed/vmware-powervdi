@@ -117,16 +117,21 @@ PS> Connect-VDI broker01 -as $johnsmith
 **Tip:** Store the password (securely) in a file, then set up your PowerShell profile to use it to create a credential object and store it in a variable.  Here's how:
 
 * Save the password to a file
+
   ```powershell
   PS> $credential = Get-Credential domain\adminuser
   PS> $credential.Password | ConvertFrom-SecureString | Set-Content "C:\Users\johnsmith\Documents\WindowsPowerShell\adminuser.txt"
   ```
+
 * Update your PowerShell profile script:
+
   ```powershell
   # C:\Users\johnsmith\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
   $adminuser = New-Object System.Management.Automation.PsCredential("domain\adminuser", (Get-Content "C:\Users\johnsmith\Documents\WindowsPowerShell\adminuser.txt" | ConvertTo-SecureString)) 
   ```
+
 * Now, from a new PowerShell console, you can run the following command without being prompted for a password: 
+
   ```powershell
   PS> Connect-VDI broker01 -as $adminuser
   ```
