@@ -1,7 +1,7 @@
 VMware PowerVDI PowerShell Module
 =================================
 
-Written by Nick Reed (reednj@missouri.edu)
+Written by Nick Reed (reednj77@gmail.com)
 
 Purpose
 -------
@@ -827,4 +827,4 @@ The settings listed will be different depending on the type of pool it is.
 Questions or Problems?
 ----------------------
 
-If you have any issues with this module which you cannot find the solution to in the documentation, please add an [issue on GitHub](https://github.com/reednj77/vmware-powervdi/issues) or fork the project and send a pull request.
+If you have any issues with this module which you cannot find the solution to in the documentation, please add an [issue on GitHub](https://github.com/reed/vmware-powervdi/issues) or fork the project and send a pull request.
